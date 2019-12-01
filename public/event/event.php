@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
         
         <div class="container">
             <div class="row d-flex justify-content-center">
-                     <img src="<?php echo "images/".$event->imgurl; ?>" alt="...">
+                     <img src="<?php echo $event->imgurl; ?>" alt="...">
             </div>
             
             <br/>
