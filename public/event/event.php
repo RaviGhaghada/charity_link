@@ -131,6 +131,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                             echo "</br>No donators? Aw, it'll be okay :)";
                           }
                           foreach ($donators as $u => $a){
+                            $donpeople = User::find_by_id($u);
                             echo '</br> <div class="row">
                                 <div class="col-md-3">
                                         <img src="images/user.png" class="card-img" alt="...">
@@ -138,14 +139,14 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                                 <div class="col-md-6">
                                     <div class="card text-center">
                                       <div class="card-body">
-                                        <h5 class="card-title">'.$u->user_name.'</h5>
+                                        <h5 class="card-title">'.$donpeople->user_name.'</h5>
                                         </div>
                                     </div>          
                                 </div>
                                 <div class="col-md-3">
                                     <div class="card text-center">
                                       <div class="card-body">
-                                        <h5 class="card-text">'.$d.'</h5>
+                                        <h5 class="card-text">'.$a.'</h5>
                                         </div>
                                     </div>          
                                 </div>
