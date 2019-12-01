@@ -77,10 +77,10 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                         <p class="card-text">Fund goal: <?php echo ($event->fund_goal); ?></p>
                         <div class="row">
                             <div class="col-sm">
-                                <a href="<?php echo (url_for("/event/eventjoin.php?id=.$event->id")); ?>" class="btn btn-outline-success btn-block">Join</a>
+                                <a href="<?php echo (url_for("/event/eventjoin.php?id=".$event->id)); ?>" class="btn btn-outline-success btn-block">Join</a>
                             </div>
                             <div class="col-sm">
-                                <a href="<?php echo (url_for("/event/eventdonate.php?id=.$event->id")); ?>" class="btn btn-outline-success btn-block">Donate</a>
+                                <a href="<?php echo (url_for("/event/eventdonate.php?id=".$event->id)); ?>" class="btn btn-outline-success btn-block">Donate</a>
                             </div>
                         </div>
                       </div>
@@ -128,7 +128,7 @@ if ($_SERVER['REQUEST_METHOD']=='POST'){
                         <?php
                           $donators = $event->get_all_donators();
                           if (sizeof($donators) == 0){
-                            echo "</br>No donators? Aw, it\'ll be okay :)";
+                            echo "</br>No donators? Aw, it'll be okay :)";
                           }
                           foreach ($donators as $u => $a){
                             echo '</br> <div class="row">

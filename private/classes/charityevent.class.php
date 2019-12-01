@@ -64,10 +64,10 @@ class CharityEvent extends DatabaseObject{
     }
 
     public function get_all_donators(){
-        $sql = "SELECT uid, SUM(amount) FROM donation WHERE eid='".$this->id."'";
+        $sql = "SELECT DISTINCT uid, SUM(amount) FROM donation WHERE eid='".$this->id."'";
         $result = self::$database->query($sql);
         if(!$result) {
-          exit("Database query failed.");
+          return array();
         }
     
         // results into objects
@@ -86,7 +86,7 @@ class CharityEvent extends DatabaseObject{
         $sql = "SELECT SUM(amount) as amt FROM donation WHERE eid='".$this->id."'";
         $result = self::$database->query($sql);
         if(!$result) {
-          exit("Database query failed.");
+          return 0;
         }
     
         // results into objects
